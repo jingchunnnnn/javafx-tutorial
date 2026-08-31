@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 /**
@@ -24,6 +25,11 @@ public class Main extends Application {
                     Main.class.getResource("/view/MainWindow.fxml"));
             AnchorPane root = fxmlLoader.load();
             stage.setScene(new Scene(root));
+            stage.setTitle("Duke Chat");
+            stage.getIcons().add(new Image(
+                    Main.class.getResourceAsStream("/images/DaDuke.png")));
+            stage.setMinHeight(220.0);
+            stage.setMinWidth(417.0);
             fxmlLoader.<MainWindow>getController().setDuke(duke);
             stage.show();
         } catch (IOException exception) {
